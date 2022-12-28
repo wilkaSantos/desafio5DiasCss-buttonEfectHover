@@ -1,0 +1,112 @@
+/* = = = = GLOBAL = = = = */
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+:root{
+    font-size: 62.5%;
+
+    --bg-hero: #343a40;
+    --bg-button: #444444;
+
+    --c-text-button: #ffffff;
+    --c-border-button: #ff5400;
+}
+
+/* = = = = HERO = = = = */
+
+.hero{
+    width: 100%;
+    height: 100vh;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    background: var(--bg-hero);
+}
+
+.button{
+    position: relative;
+    padding: 2rem 4rem;
+    cursor: pointer;
+    background: var(--bg-button);
+    color: var(--c-text-button);
+
+}
+
+.button:hover{
+    background: var(--c-border-button);
+    color: var(--c-border-button);
+    box-shadow: 0 0 35px var(--c-border-button);
+}
+
+.button span{
+    text-transform: uppercase;
+    font-size: 2rem;
+    letter-spacing: .3rem;
+    transition: all .2s ease;
+
+    position: relative;
+    z-index: 1;
+}
+
+.button span:hover{
+    letter-spacing: .7rem;
+    font-size: 2.5rem;
+}
+
+.button::before{
+    content: '';
+    position: absolute;
+    inset: 2px;
+    background: #27282c;
+}
+
+.button i{
+    position: absolute;
+    inset: 0;
+    display: block;
+}
+
+div i::before{
+    content: '';
+    position: absolute;
+    top: -.3rem;
+    left: 80%;
+
+    width: 1rem;
+    height: .5rem;
+
+    border: 2px solid var(--c-border-button);
+    background: #27282c;
+
+    transition: .4s;
+}
+
+.button:hover i::before{
+    width: 2rem;
+    left: 10%;
+}
+
+div i::after{
+    content: '';
+    position: absolute;
+    bottom: -.3rem;
+    right: 80%;
+
+    width: 1rem;
+    height: .5rem;
+
+    border: 2px solid var(--c-border-button);
+    background: #27282c;
+
+    transition: .4s;
+}
+
+.button:hover i::after{
+    width: 2rem;
+    right: 10%;
+}
